@@ -5,7 +5,7 @@ import re
 def translate(word):
 	# Look out for special cases with starting letters
 	vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
-	cons_clust_duo = ['bl', 'br',  'ch', 'cl', 'cr', 'dr', 'fl', 'fr', 'gl', 'gr', 
+	cons_clust_duo = ['bl', 'br',  'ch', 'cl', 'cr', 'dr', 'fl', 'fr', 'gh', 'gl', 'gr', 
 						'pl', 'pr', 'qu', 'sc', 'sh', 'sk', 'sl', 'sm', 'sn', 'sp', 
 						'st', 'sw', 'th', 'tr', 'tw', 'wh', 'wr']
 	cons_clust_trio = ['sch', 'scr', 'shr', 'sph', 'spl', 'spr', 'squ', 'str', 'thr']
