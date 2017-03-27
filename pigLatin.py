@@ -16,10 +16,10 @@ def translate(word):
 		if word[0] in vowels:
 			word = word + 'way'
 		elif triple_prefix(word) in cons_clust_trio:
-			word = word[3].upper() + word[4:] + triple_prefix(word).lower() + "ay"
+			word = word[3].upper() + word[4:] + triple_prefix(word) + "ay"
 
 		elif duo_prefix(word) in cons_clust_duo:
-			word = word[2].upper() + word[3:] + duo_prefix(word).lower() + "ay"
+			word = word[2].upper() + word[3:] + duo_prefix(word) + "ay"
 		else:
 			word = word[1].upper() + word[2:] + word[0].lower() + "ay"
 	else:
