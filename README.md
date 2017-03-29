@@ -21,7 +21,7 @@ You will be prompted for entering a word or phrase.
   ```
 The translator will return the pig latin translation.
   ```
-  Iway amway ephStay, Iway ikelay otay ashsplay... 
+  Iway amway Ephstay, Iway ikelay otay ashsplay... 
   ```
 The translator will also run tests and return 
   ```
