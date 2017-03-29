@@ -4,50 +4,46 @@ import re
 # Translate a single word to Pig Latin
 def translate(word):
 	# Look out for special cases with starting letters
-	vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
+	vowels = ['a', 'e', 'i', 'o', 'u']
 	cons_clust_duo = ['bl', 'br',  'ch', 'cl', 'cr', 'dr', 'fl', 'fr', 'gh', 'gl', 'gr', 
 						'pl', 'pr', 'qu', 'sc', 'sh', 'sk', 'sl', 'sm', 'sn', 'sp', 
 						'st', 'sw', 'th', 'tr', 'tw', 'wh', 'wr']
 	cons_clust_trio = ['sch', 'scr', 'shr', 'sph', 'spl', 'spr', 'squ', 'str', 'thr']
 
-	# Actual translation of word to pig latin
-	# If upper, then switch capitalized letter
-	if word[0].isupper():
-		if word[0] in vowels:
-			word = word + 'way'
-		elif triple_prefix(word) in cons_clust_trio:
-			word = word[3].upper() + word[4:] + triple_prefix(word) + "ay"
+	# Uppercase word flag
+	uppercase = word[0].isupper()
+	word = word.lower()
 
-		elif duo_prefix(word) in cons_clust_duo:
-			word = word[2].upper() + word[3:] + duo_prefix(word) + "ay"
-		else:
-			word = word[1].upper() + word[2:] + word[0].lower() + "ay"
+	# Translation of word to pig latin
+	if word[0] in vowels:
+		word = word + 'way'
+	elif triple_prefix(word) in cons_clust_trio:
+		word = word[3:] + triple_prefix(word) + "ay"
+	elif duo_prefix(word) in cons_clust_duo:
+		word = word[2:] + duo_prefix(word) + "ay"
 	else:
-		if word[0] in vowels:
-			word = word + 'way'
-		elif triple_prefix(word) in cons_clust_trio:
-			word = word[3:] + triple_prefix(word) + "ay"
+		word = word[1:] + word[0] + "ay"
 
-		elif duo_prefix(word) in cons_clust_duo:
-			word = word[2:] + duo_prefix(word) + "ay"
-		else:
-			word = word[1:] + word[0] + "ay"
+	# Uppercase first letter if uppercase
+	if uppercase:
+		word = word[0].upper() + word[1:]
 	return word
-	
+
+# Get double consanant cluster
 def duo_prefix(word):
 	if len(word) < 2:
-		return "no"
+		return False
 	else:
-		prefix = word[0] + word[1]
-		return prefix.lower()
+		return word[0:2]
 
+# Get triple consanant cluster
 def triple_prefix(word):
 	if len(word) < 3:
-		return "no"
+		return False
 	else:
-		prefix = word[0] + word[1] + word[2]
-		return prefix.lower()
+		return word[0:3]
 
+# Main method
 def main():
     phrase = str(raw_input("Input Sentence: \n"))
     p = re.compile(r'\w+|[^\w\s]')
