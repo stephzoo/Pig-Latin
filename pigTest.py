@@ -16,7 +16,7 @@ class TestPigLatinMethods(unittest.TestCase):
         self.assertEqual(pigLatin.translate_word('quick'), 'ickquay')
         self.assertEqual(pigLatin.translate_word('Schnitzel'), 'Itzelschnay')
 
-    # Test for translate_sentence, sentence gets parsedin as list of words, with punctuation as separate elements of list
+    # Test for translate_sentence, sentence gets parsed in as list of words, with punctuation as separate elements of list
     def test_translate_sentence(self):
         self.assertEqual(pigLatin.translate_sentence(['eat', 'world']), 'eatway orldway ')
         self.assertEqual(pigLatin.translate_sentence(['eat', '.', '.', '.', 'world', '?', '!']), 'eatway... orldway?! ')
