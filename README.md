@@ -7,7 +7,7 @@ Run on Python 2.7. Download from here: https://www.python.org/downloads/. Once t
 # Compiling/Running
 Open Terminal. Navigate to containing folder. 
   ```
-  python pigLatin.py
+  bash pigTest.sh
   ```
 You will be prompted for entering a word or phrase.
   ```
@@ -16,8 +16,18 @@ You will be prompted for entering a word or phrase.
   ```
 The translator will return the pig latin translation.
   ```
-  Iay amway tephSay, Iay ikelay otay ashsplay... 
+  Iway amway tephSay, Iway ikelay otay ashsplay... 
   ```
+The translator will also run tests and return 
+  ```
+  ....
+  ----------------------------------------------------------------------
+  Ran 4 tests in 3.234s
+  
+  OK
+  ```
+upon successful completion of tests. Look at pigTest.py for test cases.
+
 Finished! 
 
 # Help
