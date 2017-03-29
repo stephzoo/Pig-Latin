@@ -6,8 +6,13 @@ Run on Python 2.7. Download from here: https://www.python.org/downloads/. Once t
 
 # Compiling/Running
 Open Terminal. Navigate to containing folder. 
+If in Mac, run
   ```
   bash pigTest.sh
+  ```
+If in Windows, run
+  ```
+  pigTest.sh
   ```
 You will be prompted for entering a word or phrase.
   ```
